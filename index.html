@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gourab Das | Hardware Verification & Software Engineer Portfolio</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+            },
+            darkBg: '#0b0f19',
+            cardBg: '#111827',
+            cardBorder: '#1f293d'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #0b0f19;
+      color: #e2e8f0;
+      font-family: 'Inter', sans-serif;
+    }
+    .glow-effect {
+      background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+    }
+    .glass-nav {
+      background: rgba(11, 15, 25, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+  </style>
+</head>
+<body class="min-h-screen selection:bg-brand-500 selection:text-white relative overflow-x-hidden">
+
+  <!-- Ambient Glow -->
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] glow-effect pointer-events-none -z-10"></div>
+
+  <!-- Navigation Bar -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-cardBorder">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#hero" class="flex items-center gap-2 group">
+        <div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-brand-600 to-indigo-400 flex items-center justify-center font-bold text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
+          GD
+        </div>
+        <span class="font-bold text-lg text-slate-100 tracking-tight">Gourab Das<span class="text-brand-400">.</span></span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
+        <a href="#services" class="hover:text-brand-400 transition-colors">Services</a>
+        <a href="#projects" class="hover:text-brand-400 transition-colors">Projects</a>
+        <a href="#skills" class="hover:text-brand-400 transition-colors">Skills</a>
+        <a href="#education" class="hover:text-brand-400 transition-colors">Background</a>
+        <a href="#certifications" class="hover:text-brand-400 transition-colors">Certifications</a>
+        <a href="#contact" class="px-4 py-2 rounded-lg bg-brand-600 hover:bg-brand-500 text-white font-semibold transition-all shadow-md shadow-brand-600/30 hover:shadow-brand-500/50">
+          Hire Me
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobileMenuBtn" aria-label="Toggle menu" class="md:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobileMenu" class="hidden md:hidden border-b border-cardBorder bg-[#0f172a] px-4 pt-3 pb-5 space-y-3">
+      <a href="#services" class="block py-2 text-slate-300 hover:text-brand-400 mobile-link">Services</a>
+      <a href="#projects" class="block py-2 text-slate-300 hover:text-brand-400 mobile-link">Projects</a>
+      <a href="#skills" class="block py-2 text-slate-300 hover:text-brand-400 mobile-link">Skills</a>
+      <a href="#education" class="block py-2 text-slate-300 hover:text-brand-400 mobile-link">Background</a>
+      <a href="#certifications" class="block py-2 text-slate-300 hover:text-brand-400 mobile-link">Certifications</a>
+      <a href="#contact" class="block w-full text-center py-2.5 rounded-lg bg-brand-600 text-white font-medium mobile-link">
+        Hire Me
+      </a>
+    </div>
+  </header>
+
+  <main class="pt-24 space-y-28">
+
+    <!-- Hero Section -->
+    <section id="hero" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-16 pb-12">
+      <div class="flex flex-col lg:flex-row items-center gap-12">
+        <div class="flex-1 space-y-6 text-center lg:text-left">
+          
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-brand-500/30 bg-brand-500/10 text-brand-400 text-xs sm:text-sm font-medium tracking-wide">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Available for Freelance & Verification Roles
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+            Bridging <span class="bg-gradient-to-r from-brand-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent">Hardware Verification</span> & Modern AI Engineering.
+          </h1>
+
+          <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            I'm <strong class="text-white font-semibold">Gourab Das</strong>, a Computer Science Engineering graduate specializing in 
+            <span class="text-brand-400">SystemVerilog RTL Verification</span>, functional testbenches, and end-to-end software/AI application development.
+          </p>
+
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="#contact" class="flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold shadow-lg shadow-brand-600/30 hover:scale-[1.02] active:scale-[0.98] transition">
+              <i data-lucide="mail" class="w-4 h-4"></i> Discuss a Project
+            </a>
+            <a href="#projects" class="flex items-center gap-2 px-6 py-3 rounded-xl border border-slate-700 hover:border-slate-500 bg-slate-900/60 hover:bg-slate-800 text-slate-200 font-medium transition">
+              <i data-lucide="terminal" class="w-4 h-4"></i> Explore Work
+            </a>
+          </div>
+
+          <!-- Quick Badges -->
+          <div class="pt-6 border-t border-slate-800/80 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-slate-400">
+            <div class="flex items-center gap-1.5">
+              <i data-lucide="map-pin" class="w-4 h-4 text-brand-400"></i> India (Remote Available)
+            </div>
+            <div class="flex items-center gap-1.5">
+              <i data-lucide="cpu" class="w-4 h-4 text-brand-400"></i> SystemVerilog / RTL / UVM
+            </div>
+            <div class="flex items-center gap-1.5">
+              <i data-lucide="sparkles" class="w-4 h-4 text-brand-400"></i> AI & Full Stack
+            </div>
+          </div>
+        </div>
+
+        <!-- Terminal Profile Card -->
+        <div class="w-full lg:w-5/12 max-w-md">
+          <div class="rounded-2xl border border-cardBorder bg-cardBg shadow-2xl p-6 relative group overflow-hidden">
+            <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+              </div>
+              <span class="font-mono text-xs text-slate-400">gourab@workstation:~</span>
+            </div>
+
+            <div class="pt-5 space-y-4 font-mono text-xs sm:text-sm">
+              <div>
+                <p class="text-slate-400">// Primary Focus</p>
+                <p class="text-brand-400 font-semibold text-sm">"Hardware Verification & Software Dev"</p>
+              </div>
+              <div>
+                <p class="text-slate-400">// Core Toolkit</p>
+                <div class="flex flex-wrap gap-1.5 mt-1.5">
+                  <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">SystemVerilog</span>
+                  <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">C/C++</span>
+                  <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">Python</span>
+                  <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">TensorFlow</span>
+                  <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">React</span>
+                </div>
+              </div>
+              <div>
+                <p class="text-slate-400">// Availability</p>
+                <p class="text-emerald-400 font-medium flex items-center gap-1.5 mt-0.5">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Open to Contract / Freelance
+                </p>
+              </div>
+              <div class="pt-2">
+                <a href="https://linkedin.com/in/gourab-das-8142a0260" target="_blank" rel="noopener noreferrer" 
+                   class="w-full flex items-center justify-center gap-2 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-100 text-xs font-sans font-semibold transition border border-slate-700">
+                  <i data-lucide="linkedin" class="w-4 h-4 text-sky-400"></i> Connect on LinkedIn
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Freelance Services Section -->
+    <section id="services" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center space-y-3 mb-12">
+        <h2 class="text-xs uppercase tracking-widest text-brand-400 font-bold">What I Offer</h2>
+        <p class="text-3xl font-extrabold text-white">Freelance Services & Technical Solutions</p>
+        <p class="text-slate-400 max-w-xl mx-auto text-sm">Targeted expertise in digital hardware verification testbenches, machine learning models, and custom software systems.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Service 1 -->
+        <div class="p-6 rounded-2xl border border-cardBorder bg-cardBg hover:border-brand-500/50 transition-all group flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/30 flex items-center justify-center text-brand-400 mb-5 group-hover:scale-110 transition-transform">
+              <i data-lucide="cpu" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Hardware Verification & RTL Debugging</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+              Building simulation-based testbenches to validate functional behavior and corner-cases. Proficient in SystemVerilog, UVM/OVM concepts, waveform debugging, and CPU architecture fundamentals.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800">
+            <span class="text-xs px-2.5 py-1 rounded-md bg-slate-800/80 text-brand-300">SystemVerilog</span>
+            <span class="text-xs px-2.5 py-1 rounded-md bg-slate-800/80 text-brand-300">Testbenches</span>
+            <span class="text-xs px-2.5 py-1 rounded-md bg-slate-800/80 text-brand-300">Waveform Debug</span>
+            <span class="text-xs px-2.5 py-1 rounded-md bg-slate-800/80 text-brand-300">Digital Logic</span>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="p-6 rounded-2xl border border-cardBorder bg-cardBg hover:border-brand-500/50 transition-all group flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 mb-5 group-hover:scale-110 transition-transform">
+              <i data-lucide="eye" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Computer Vision & AI Model Development</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+              Custom deep learning pipelines using TensorFlow, Keras, and OpenCV. Specializing in real-time object/face mask detection, model validation, testing, and performance optimization for edge and desktop.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800">
+            <span class="text-xs px-2.5 py-1 rounded-md bg-slate-800/80 text-purple-300">TensorFlow</span>
+            <span class="text-xs px-2.5 py-1 rounded-md bg-slate-800/80 text-purple-300">OpenCV</span>
+            <span class="text-xs px-2.5 py-1 rounded-md bg-slate-800/80 text-purple-300">Keras</span>
+            <span class="text-xs px-2.5 py-1 rounded-md bg-slate-800/80 text-purple-300">Model Tuning</span>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="p-6 rounded-2xl border border-cardBorder bg-cardBg hover:border-brand-500/50 transition-all group flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-5 group-hover:scale-110 transition-transform">
+              <i data-lucide="mic" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Custom Python Automation & Voice Assistants</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+              Modular software systems integrating Speech Recognition, Natural Language Processing, REST APIs, and background OS automations with robust error handling and environment-based secret management.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800">
+            <span class="text-xs px-2.5 py-1 rounded-md bg-slate-800/80 text-emerald-300">Python</span>
+            <span class="text-xs px-2.5 py-1 rounded-md bg-slate-800/80 text-emerald-300">NLP</span>
+            <span class="text-xs px-2.5 py-1 rounded-md bg-slate-800/80 text-emerald-300">Speech Recognition</span>
+            <span class="text-xs px-2.5 py-1 rounded-md bg-slate-800/80 text-emerald-300">REST APIs</span>
+          </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="p-6 rounded-2xl border border-cardBorder bg-cardBg hover:border-brand-500/50 transition-all group flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 mb-5 group-hover:scale-110 transition-transform">
+              <i data-lucide="code" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Full-Stack Web & Tools Development</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+              Responsive frontends built with React JS and modern web standards. Backed by relational databases (MySQL) and deployment workflows across GitHub, Google Cloud, and AWS.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800">
+            <span class="text-xs px-2.5 py-1 rounded-md bg-slate-800/80 text-sky-300">React JS</span>
+            <span class="text-xs px-2.5 py-1 rounded-md bg-slate-800/80 text-sky-300">JavaScript</span>
+            <span class="text-xs px-2.5 py-1 rounded-md bg-slate-800/80 text-sky-300">MySQL</span>
+            <span class="text-xs px-2.5 py-1 rounded-md bg-slate-800/80 text-sky-300">Cloud / Git</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center space-y-3 mb-12">
+        <h2 class="text-xs uppercase tracking-widest text-brand-400 font-bold">Selected Projects</h2>
+        <p class="text-3xl font-extrabold text-white">Proven Execution in Hardware & Software</p>
+        <p class="text-slate-400 max-w-xl mx-auto text-sm">Key engineering implementations showcasing rigorous debugging, simulation, and modern AI pipelines.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+        <!-- Project 1: UART -->
+        <div class="flex flex-col justify-between p-6 rounded-2xl border border-cardBorder bg-cardBg hover:border-brand-500/40 transition">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="p-2.5 rounded-lg bg-indigo-500/10 text-indigo-400 border border-indigo-500/30">
+                <i data-lucide="circuit-board" class="w-5 h-5"></i>
+              </span>
+              <span class="text-xs px-2.5 py-1 rounded-full bg-slate-800 text-slate-300 font-mono">Hardware Verification</span>
+            </div>
+
+            <h3 class="text-lg font-bold text-white group-hover:text-brand-400 transition">UART Communication Module Verification</h3>
+            
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Developed an in-depth understanding of RTL modules and standard verification flows using SystemVerilog.
+            </p>
+
+            <ul class="text-xs text-slate-400 space-y-2 list-disc list-inside">
+              <li>Created simulation-based test scenarios targeting functional behavior and extreme corner cases.</li>
+              <li>Conducted detailed waveform analysis and debugging routines to catch timing and logic flaws.</li>
+              <li>Validated transmitter and receiver data integrity under varied baud configurations.</li>
+            </ul>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-slate-800 flex flex-wrap gap-1.5">
+            <span class="text-xs px-2 py-0.5 rounded bg-slate-800 text-brand-300">SystemVerilog</span>
+            <span class="text-xs px-2 py-0.5 rounded bg-slate-800 text-brand-300">RTL Debugging</span>
+            <span class="text-xs px-2 py-0.5 rounded bg-slate-800 text-brand-300">Simulation</span>
+          </div>
+        </div>
+
+        <!-- Project 2: Face Mask Detection -->
+        <div class="flex flex-col justify-between p-6 rounded-2xl border border-cardBorder bg-cardBg hover:border-brand-500/40 transition">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="p-2.5 rounded-lg bg-purple-500/10 text-purple-400 border border-purple-500/30">
+                <i data-lucide="scan-face" class="w-5 h-5"></i>
+              </span>
+              <span class="text-xs px-2.5 py-1 rounded-full bg-slate-800 text-slate-300 font-mono">Deep Learning / CV</span>
+            </div>
+
+            <h3 class="text-lg font-bold text-white">Real-Time Face Mask Detection System</h3>
+            
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Built an automated, high-precision detection system able to classify face mask compliance on real-time video feeds.
+            </p>
+
+            <ul class="text-xs text-slate-400 space-y-2 list-disc list-inside">
+              <li>Engineered convolutional neural networks using TensorFlow and Keras pipelines.</li>
+              <li>Integrated OpenCV for rapid multi-face detection, bounding box overlay, and live webcam feeds.</li>
+              <li>Conducted model validation, confusion matrix analysis, and latency optimizations.</li>
+            </ul>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-slate-800 flex flex-wrap gap-1.5">
+            <span class="text-xs px-2 py-0.5 rounded bg-slate-800 text-purple-300">TensorFlow</span>
+            <span class="text-xs px-2 py-0.5 rounded bg-slate-800 text-purple-300">Keras</span>
+            <span class="text-xs px-2 py-0.5 rounded bg-slate-800 text-purple-300">OpenCV</span>
+            <span class="text-xs px-2 py-0.5 rounded bg-slate-800 text-purple-300">NumPy</span>
+          </div>
+        </div>
+
+        <!-- Project 3: AI Voice Assistant -->
+        <div class="flex flex-col justify-between p-6 rounded-2xl border border-cardBorder bg-cardBg hover:border-brand-500/40 transition">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="p-2.5 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                <i data-lucide="bot" class="w-5 h-5"></i>
+              </span>
+              <span class="text-xs px-2.5 py-1 rounded-full bg-slate-800 text-slate-300 font-mono">Python / Automation</span>
+            </div>
+
+            <h3 class="text-lg font-bold text-white">Intelligent AI Voice Assistant</h3>
+            
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Architected a modular software system integrating speech recognition, natural language interpretation, and external REST APIs.
+            </p>
+
+            <ul class="text-xs text-slate-400 space-y-2 list-disc list-inside">
+              <li>Built reliable voice-command processing with robust system error handling and diagnostics.</li>
+              <li>Enabled automated local OS control, web searches, and custom API query handling.</li>
+              <li>Implemented secure credential and API key management using environment variables.</li>
+            </ul>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-slate-800 flex flex-wrap gap-1.5">
+            <span class="text-xs px-2 py-0.5 rounded bg-slate-800 text-emerald-300">Python</span>
+            <span class="text-xs px-2 py-0.5 rounded bg-slate-800 text-emerald-300">NLP</span>
+            <span class="text-xs px-2 py-0.5 rounded bg-slate-800 text-emerald-300">REST APIs</span>
+            <span class="text-xs px-2 py-0.5 rounded bg-slate-800 text-emerald-300">Speech-to-Text</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center space-y-3 mb-12">
+        <h2 class="text-xs uppercase tracking-widest text-brand-400 font-bold">Core Competencies</h2>
+        <p class="text-3xl font-extrabold text-white">Technical Arsenal</p>
+        <p class="text-slate-400 max-w-xl mx-auto text-sm">Skills developed through intensive CS coursework, hands-on simulation, and full-stack software development.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Category: Hardware Verification -->
+        <div class="p-6 rounded-2xl border border-cardBorder bg-cardBg">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="p-2 rounded-lg bg-indigo-500/20 text-indigo-400">
+              <i data-lucide="cpu" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-bold text-white text-base">Hardware Verification</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-tag">SystemVerilog (Basics)</span>
+            <span class="skill-tag">UVM / OVM Concepts</span>
+            <span class="skill-tag">RTL Debugging</span>
+            <span class="skill-tag">Functional Verification</span>
+            <span class="skill-tag">Testbench Architecture</span>
+            <span class="skill-tag">Hardware Simulation</span>
+            <span class="skill-tag">Digital Logic Design</span>
+            <span class="skill-tag">CPU Architecture</span>
+          </div>
+        </div>
+
+        <!-- Category: Programming Languages -->
+        <div class="p-6 rounded-2xl border border-cardBorder bg-cardBg">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="p-2 rounded-lg bg-sky-500/20 text-sky-400">
+              <i data-lucide="code-2" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-bold text-white text-base">Languages & Fundamentals</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-tag">C / C++</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Data Structures & Algo</span>
+            <span class="skill-tag">OOP</span>
+            <span class="skill-tag">Operating Systems</span>
+            <span class="skill-tag">Software Testing / SDLC</span>
+          </div>
+        </div>
+
+        <!-- Category: AI & Automation -->
+        <div class="p-6 rounded-2xl border border-cardBorder bg-cardBg">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="p-2 rounded-lg bg-purple-500/20 text-purple-400">
+              <i data-lucide="sparkles" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-bold text-white text-base">AI, Vision & Automation</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-tag">TensorFlow</span>
+            <span class="skill-tag">Keras</span>
+            <span class="skill-tag">OpenCV</span>
+            <span class="skill-tag">NumPy</span>
+            <span class="skill-tag">Matplotlib</span>
+            <span class="skill-tag">Model Validation</span>
+            <span class="skill-tag">Speech Recognition</span>
+            <span class="skill-tag">RAG Concepts</span>
+          </div>
+        </div>
+
+        <!-- Category: Web & DB -->
+        <div class="p-6 rounded-2xl border border-cardBorder bg-cardBg">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="p-2 rounded-lg bg-emerald-500/20 text-emerald-400">
+              <i data-lucide="layout" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-bold text-white text-base">Web & Database</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-tag">React JS</span>
+            <span class="skill-tag">HTML5 & CSS3</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">REST APIs</span>
+            <span class="skill-tag">Responsive UI</span>
+          </div>
+        </div>
+
+        <!-- Category: Cloud & Tools -->
+        <div class="p-6 rounded-2xl border border-cardBorder bg-cardBg">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="p-2 rounded-lg bg-amber-500/20 text-amber-400">
+              <i data-lucide="cloud" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-bold text-white text-base">Cloud & Tooling</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-tag">Git & GitHub</span>
+            <span class="skill-tag">Google Cloud Platform</span>
+            <span class="skill-tag">AWS Solutions Architecture</span>
+            <span class="skill-tag">VS Code</span>
+            <span class="skill-tag">Simulation Environments</span>
+          </div>
+        </div>
+
+        <!-- Category: Soft Skills & Languages -->
+        <div class="p-6 rounded-2xl border border-cardBorder bg-cardBg">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="p-2 rounded-lg bg-rose-500/20 text-rose-400">
+              <i data-lucide="users" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-bold text-white text-base">Soft Skills & Spoken</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-tag">Analytical Problem Solving</span>
+            <span class="skill-tag">Team Collaboration</span>
+            <span class="skill-tag">Time Management</span>
+            <span class="skill-tag">English (Professional)</span>
+            <span class="skill-tag">Hindi</span>
+            <span class="skill-tag">Bengali</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Education & Certifications Section -->
+    <section id="education" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        
+        <!-- Academic Background -->
+        <div>
+          <div class="flex items-center gap-2 mb-6">
+            <i data-lucide="graduation-cap" class="w-6 h-6 text-brand-400"></i>
+            <h2 class="text-2xl font-bold text-white">Education</h2>
+          </div>
+
+          <div class="space-y-6 relative border-l border-slate-800 ml-3 pl-6">
+            <!-- B.Tech -->
+            <div class="relative">
+              <span class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-brand-500 ring-4 ring-darkBg"></span>
+              <div class="p-4 rounded-xl border border-cardBorder bg-cardBg">
+                <span class="text-xs font-mono text-brand-400">2022 — 2026</span>
+                <h3 class="text-base font-semibold text-white mt-1">Bachelor of Technology – Computer Science & Engineering</h3>
+                <p class="text-sm text-slate-300">Regent Education & Research Foundation, Kolkata, India</p>
+                <div class="mt-2 inline-block px-2.5 py-0.5 rounded bg-brand-500/10 border border-brand-500/30 text-xs font-mono text-brand-300">
+                  CGPA: 8.2 / 10
+                </div>
+              </div>
+            </div>
+
+            <!-- 12th Board -->
+            <div class="relative">
+              <span class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-slate-600 ring-4 ring-darkBg"></span>
+              <div class="p-4 rounded-xl border border-cardBorder bg-cardBg">
+                <span class="text-xs font-mono text-slate-400">2019 — 2021</span>
+                <h3 class="text-base font-semibold text-white mt-1">Higher Secondary (12th Board - WBCHSE)</h3>
+                <p class="text-sm text-slate-300">Kalyani Pannalal Institution, Kalyani, India</p>
+                <div class="mt-2 inline-block px-2.5 py-0.5 rounded bg-slate-800 text-xs font-mono text-slate-300">
+                  Percentage: 81.4%
+                </div>
+              </div>
+            </div>
+
+            <!-- 10th Board -->
+            <div class="relative">
+              <span class="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-slate-600 ring-4 ring-darkBg"></span>
+              <div class="p-4 rounded-xl border border-cardBorder bg-cardBg">
+                <span class="text-xs font-mono text-slate-400">2013 — 2019</span>
+                <h3 class="text-base font-semibold text-white mt-1">Secondary (10th Board - WBBSE)</h3>
+                <p class="text-sm text-slate-300">Kalyani Pannalal Institution, Kalyani, India</p>
+                <div class="mt-2 inline-block px-2.5 py-0.5 rounded bg-slate-800 text-xs font-mono text-slate-300">
+                  Percentage: 83.4%
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certifications -->
+        <div id="certifications">
+          <div class="flex items-center gap-2 mb-6">
+            <i data-lucide="award" class="w-6 h-6 text-brand-400"></i>
+            <h2 class="text-2xl font-bold text-white">Certifications & Training</h2>
+          </div>
+
+          <div class="space-y-3">
+            <div class="p-4 rounded-xl border border-cardBorder bg-cardBg flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <span class="w-2 h-2 rounded-full bg-brand-400"></span>
+                <div>
+                  <h4 class="text-sm font-semibold text-white">Introduction to Retrieval Augmented Generation (RAG)</h4>
+                  <p class="text-xs text-slate-400">IBM SkillsBuild</p>
+                </div>
+              </div>
+              <span class="text-xs font-mono text-indigo-400 border border-indigo-500/20 px-2 py-0.5 rounded bg-indigo-500/10">IBM</span>
+            </div>
+
+            <div class="p-4 rounded-xl border border-cardBorder bg-cardBg flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <span class="w-2 h-2 rounded-full bg-brand-400"></span>
+                <div>
+                  <h4 class="text-sm font-semibold text-white">Ethical Considerations for Generative AI</h4>
+                  <p class="text-xs text-slate-400">IBM SkillsBuild</p>
+                </div>
+              </div>
+              <span class="text-xs font-mono text-indigo-400 border border-indigo-500/20 px-2 py-0.5 rounded bg-indigo-500/10">IBM</span>
+            </div>
+
+            <div class="p-4 rounded-xl border border-cardBorder bg-cardBg flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+                <div>
+                  <h4 class="text-sm font-semibold text-white">Solutions Architecture Job Simulation</h4>
+                  <p class="text-xs text-slate-400">AWS (Forage)</p>
+                </div>
+              </div>
+              <span class="text-xs font-mono text-amber-400 border border-amber-500/20 px-2 py-0.5 rounded bg-amber-500/10">AWS</span>
+            </div>
+
+            <div class="p-4 rounded-xl border border-cardBorder bg-cardBg flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                <div>
+                  <h4 class="text-sm font-semibold text-white">Introduction to Generative AI Studio</h4>
+                  <p class="text-xs text-slate-400">Google Cloud (Forage)</p>
+                </div>
+              </div>
+              <span class="text-xs font-mono text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded bg-emerald-500/10">GCP</span>
+            </div>
+
+            <div class="p-4 rounded-xl border border-cardBorder bg-cardBg flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <span class="w-2 h-2 rounded-full bg-sky-400"></span>
+                <div>
+                  <h4 class="text-sm font-semibold text-white">Data Analytics Job Simulation</h4>
+                  <p class="text-xs text-slate-400">Deloitte (Forage)</p>
+                </div>
+              </div>
+              <span class="text-xs font-mono text-sky-400 border border-sky-500/20 px-2 py-0.5 rounded bg-sky-500/10">Deloitte</span>
+            </div>
+
+            <div class="p-4 rounded-xl border border-cardBorder bg-cardBg flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <span class="w-2 h-2 rounded-full bg-indigo-400"></span>
+                <div>
+                  <h4 class="text-sm font-semibold text-white">Google Cloud Skill Boost Badge</h4>
+                  <p class="text-xs text-slate-400">Simplilearn</p>
+                </div>
+              </div>
+              <span class="text-xs font-mono text-slate-300 border border-slate-700 px-2 py-0.5 rounded bg-slate-800">SkillBoost</span>
+            </div>
+
+            <div class="p-4 rounded-xl border border-cardBorder bg-cardBg flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+                <div>
+                  <h4 class="text-sm font-semibold text-white">Data Visualisation: Empowering Business with Insights</h4>
+                  <p class="text-xs text-slate-400">Tata (Forage)</p>
+                </div>
+              </div>
+              <span class="text-xs font-mono text-purple-400 border border-purple-500/20 px-2 py-0.5 rounded bg-purple-500/10">Visualization</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Hire Me & Contact Section -->
+    <section id="contact" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+      <div class="rounded-3xl border border-brand-500/30 bg-gradient-to-b from-[#131c31] to-cardBg p-8 sm:p-12 text-center relative overflow-hidden shadow-2xl">
+        <div class="max-w-xl mx-auto space-y-4">
+          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-brand-500/20 text-brand-300 border border-brand-500/30">Get In Touch</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Ready to Collaborate?</h2>
+          <p class="text-slate-300 text-sm sm:text-base">
+            Whether you need RTL testbench verification in SystemVerilog, an AI-powered computer vision prototype, or automated Python tooling, I'm ready to contribute.
+          </p>
+
+          <div class="pt-6 flex flex-wrap items-center justify-center gap-4">
+            <!-- Mail Button -->
+            <a href="mailto:gourab0013@gmail.com" class="flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold transition shadow-lg shadow-brand-600/30">
+              <i data-lucide="mail" class="w-5 h-5"></i> gourab0013@gmail.com
+            </a>
+            
+            <!-- Call Button -->
+            <a href="tel:+918981919432" class="flex items-center gap-2 px-6 py-3 rounded-xl border border-slate-700 bg-slate-800/80 hover:bg-slate-700 text-slate-200 font-semibold transition">
+              <i data-lucide="phone" class="w-5 h-5 text-emerald-400"></i> +91-8981919432
+            </a>
+          </div>
+
+          <!-- Social Links -->
+          <div class="pt-6 flex items-center justify-center gap-6">
+            <a href="https://linkedin.com/in/gourab-das-8142a0260" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sm text-slate-400 hover:text-brand-400 transition">
+              <i data-lucide="linkedin" class="w-5 h-5"></i> LinkedIn Profile
+            </a>
+            <span class="text-slate-700">|</span>
+            <span class="text-sm text-slate-400 flex items-center gap-1.5">
+              <i data-lucide="map-pin" class="w-4 h-4 text-rose-400"></i> Kolkata / Kalyani, India
+            </span>
+          </div>
+
+          <!-- Quick Copy Email Toast Trigger -->
+          <div class="pt-4">
+            <button id="copyEmailBtn" class="text-xs text-slate-400 hover:text-slate-200 underline transition cursor-pointer">
+              Click to copy email address to clipboard
+            </button>
+            <div id="copySuccessMsg" class="hidden text-xs text-emerald-400 mt-2 font-mono">
+              ✓ Email copied: gourab0013@gmail.com
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-cardBorder py-8 bg-[#090d16] text-center text-xs text-slate-500">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© 2026 Gourab Das. All rights reserved.</p>
+      <p class="font-mono text-slate-400">B.Tech CSE • Verification & Software Engineer</p>
+    </div>
+  </footer>
+
+  <style>
+    .skill-tag {
+      padding: 0.35rem 0.65rem;
+      border-radius: 0.5rem;
+      background-color: rgba(30, 41, 59, 0.7);
+      border: 1px solid rgba(51, 65, 85, 0.7);
+      color: #cbd5e1;
+      font-size: 0.75rem;
+      font-family: 'JetBrains Mono', monospace;
+      transition: all 0.2s ease;
+    }
+    .skill-tag:hover {
+      border-color: #6366f1;
+      color: #e0e7ff;
+      background-color: rgba(99, 102, 241, 0.1);
+    }
+  </style>
+
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu on click
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Clipboard Copy Handler
+    const copyEmailBtn = document.getElementById('copyEmailBtn');
+    const copySuccessMsg = document.getElementById('copySuccessMsg');
+
+    copyEmailBtn.addEventListener('click', () => {
+      const email = 'gourab0013@gmail.com';
+      const tempInput = document.createElement('textarea');
+      tempInput.value = email;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      try {
+        document.execCommand('copy');
+        copySuccessMsg.classList.remove('hidden');
+        setTimeout(() => {
+          copySuccessMsg.classList.add('hidden');
+        }, 3000);
+      } catch (err) {
+        console.error('Failed to copy text', err);
+      }
+      document.body.removeChild(tempInput);
+    });
+  </script>
+</body>
+</html>
